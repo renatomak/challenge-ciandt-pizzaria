@@ -1,10 +1,7 @@
 package com.ciandt.pizzaria.models;
 
 import com.ciandt.pizzaria.dtos.FlavorDto;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +11,8 @@ import java.io.Serializable;
 @Setter
 @ToString
 @Table(name = "tb_flavor")
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Flavor implements Serializable {
     private static final long serialVersionUID = -8194331057711583877L;
@@ -38,5 +37,4 @@ public class Flavor implements Serializable {
         this.description = dto.getDescription();
         this.price = dto.getPrice();
     }
-
 }
