@@ -1,5 +1,6 @@
 package com.ciandt.pizzaria.models;
 
+import com.ciandt.pizzaria.dtos.FlavorDto;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,5 +31,12 @@ public class Flavor implements Serializable {
 
     @Column(nullable = false)
     private Double price;
+
+    public Flavor(FlavorDto dto) {
+        this.id = dto.getId();
+        this.name = dto.getName();
+        this.description = dto.getDescription();
+        this.price = dto.getPrice();
+    }
 
 }
