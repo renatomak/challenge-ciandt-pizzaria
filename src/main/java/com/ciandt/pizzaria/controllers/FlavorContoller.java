@@ -13,7 +13,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/flavors")
-public class FlavorContoller {
+public class FlavorContoller implements FlavorApi{
 
     @Autowired
     private FlavorService flavorService;
