@@ -44,20 +44,22 @@ Já com o [IntelliJ IDE](https://www.jetbrains.com/pt-br/idea/download/) instala
 Para rodarmos a aplicação local pela primeira vez, devemos já possuir este repositório clonado e aberto em seu IDE.
 
 
-Por default o envio para filas do RabbitMQ são desativadas para o perfil local, se for necessário inserir na fila para algum teste deve ser habilitado o seguinte atributo no application.yml:
-
-
 ### Maven
 Para compilar a aplicação via comand line, deve-se rodar o comando abaixo.
 
 ```
 mvn clean install -U
 ```
-## Endpoints disponiveis:
+## Endpoints disponíveis:
 
 - [x] POST: /flavors - Cria um novo sabor. É preciso informar os campos name, description, price;
 - [x] GET: /flavors - Recupera todos os sabores cadastrados;
 - [x] GET: /flavors/{id} - Recupera um sabor, conforme id informado;
 - [x] PUT: /flavors/{id} - Atualiza um sabor, conforme id informado. É preciso informar os campos a serem alterados.
 - [x] DELETE: /flavors/{id} - Remove um sabor, conforme id informado.
+</br>
+</br>
+
+---
+Projeto criado na fase de desafio técnico do processo seletivo para vaga de Desenvolvedor Junior BackEnd Java na CI&T. 
 
