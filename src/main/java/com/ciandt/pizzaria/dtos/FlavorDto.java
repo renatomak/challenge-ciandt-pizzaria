@@ -1,12 +1,14 @@
 package com.ciandt.pizzaria.dtos;
 
 import com.ciandt.pizzaria.models.Flavor;
-import com.ciandt.pizzaria.utils.Messages;
 import lombok.*;
 
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
+
+import static com.ciandt.pizzaria.utils.Messages.*;
 
 @Getter
 @Setter
@@ -19,14 +21,17 @@ public class FlavorDto implements Serializable {
     @EqualsAndHashCode.Include
     private Long id;
 
-    @NotEmpty(message = Messages.VALIDATION_NAME_IS_REQUIRED)
+    @NotEmpty(message = VALIDATION_NAME_IS_EMPTY)
+    @NotNull(message = VALIDATION_NAME_IS_REQUIRED)
+    @Size(min = 3, max = 100, message = VALIDATION_NAME_SIZE)
     private String name;
 
-    @NotEmpty(message = Messages.VALIDATION_DESCRIPTION_IS_REQUIRED)
+    @NotEmpty(message = VALIDATION_DESCRIPTION_IS_EMPTY)
+    @NotNull(message = VALIDATION_DESCRIPTION_IS_REQUIRED)
+    @Size(max = 240, message = VALIDATION_DESCRIPTION_SIZE)
     private String description;
 
-    @NotEmpty(message = Messages.VALIDATION_PRICE_IS_REQUIRED)
-    @Digits(integer = 6, fraction = 2)
+    @NotEmpty(message = VALIDATION_PRICE_IS_REQUIRED)
     private Double price;
 
     public FlavorDto(Flavor entity) {
