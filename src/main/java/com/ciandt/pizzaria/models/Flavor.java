@@ -15,7 +15,6 @@ import static com.ciandt.pizzaria.utils.Messages.*;
 @Entity
 @Getter
 @Setter
-@ToString
 @Table(name = "tb_flavor")
 @AllArgsConstructor
 @NoArgsConstructor
@@ -36,17 +35,10 @@ public class Flavor implements Serializable {
 
     @NotEmpty(message = VALIDATION_DESCRIPTION_IS_EMPTY)
     @NotNull(message = VALIDATION_DESCRIPTION_IS_REQUIRED)
-    @Size(max = 240, message = VALIDATION_DESCRIPTION_SIZE)
+    @Size(min = 3, max = 240, message = VALIDATION_DESCRIPTION_SIZE)
     private String description;
 
     @Column(nullable = false)
     @DecimalMin(value = "1.00", message = VALIDATION_PRICE_GREATER_THAN_ONE)
     private Double price;
-
-    public Flavor(FlavorDto dto) {
-        this.id = dto.getId();
-        this.name = dto.getName();
-        this.description = dto.getDescription();
-        this.price = dto.getPrice();
-    }
 }

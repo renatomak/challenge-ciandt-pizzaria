@@ -3,10 +3,8 @@ package com.ciandt.pizzaria.services;
 import com.ciandt.pizzaria.dtos.FlavorDto;
 import com.ciandt.pizzaria.models.Flavor;
 import com.ciandt.pizzaria.repositories.FlavorRepository;
-import com.ciandt.pizzaria.services.exceptions.DataBasesException;
 import com.ciandt.pizzaria.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -54,7 +52,7 @@ public class FlavorService {
             entity = flavorRepository.save(entity);
             return new FlavorDto(entity);
         } catch (EntityNotFoundException e) {
-            throw new ResourceNotFoundException(EXCEPTION_ID_NOT_FOUND + id);
+            throw new ResourceNotFoundException(EXCEPTION_ID_NOT_FOUND + id + ".");
         }
     }
 
@@ -62,9 +60,7 @@ public class FlavorService {
         try {
             flavorRepository.deleteById(id);
         } catch (EmptyResultDataAccessException e) {
-            throw new ResourceNotFoundException(EXCEPTION_ID_NOT_FOUND + id);
-        } catch (DataIntegrityViolationException e) {
-            throw new DataBasesException(EXCEPTION_INTEGRITY_VIOLATION);
+            throw new ResourceNotFoundException(EXCEPTION_ID_NOT_FOUND + id + ".");
         }
     }
 
@@ -95,7 +91,7 @@ public class FlavorService {
         if (field.trim().isEmpty()) {
             throw new ResourceNotFoundException(VALIDATION_NAME_IS_EMPTY);
         }
-        if (field.trim().length() < 3 || field.trim().length() > 240) {
+        if (field.trim().length() < 3 || field.trim().length() > 100) {
             throw new ResourceNotFoundException(VALIDATION_NAME_SIZE);
         }
     }
@@ -104,7 +100,7 @@ public class FlavorService {
         if (field.trim().isEmpty()) {
             throw new ResourceNotFoundException(VALIDATION_DESCRIPTION_IS_EMPTY);
         }
-        if (field.trim().length() > 240) {
+        if (field.trim().length() < 3 || field.trim().length() > 240) {
             throw new ResourceNotFoundException(VALIDATION_DESCRIPTION_SIZE);
         }
     }
