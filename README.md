@@ -29,7 +29,10 @@ Em seu workbench, você pode acessar o banco local criado com os seguintes acess
 - Port: 3306
 - Username: root
 - Password: toor
+
+Observação: Você pode usar outros dados de usuário, altere os respectivos campos em application.properties
 ```
+
 
 ### IDE
 
