@@ -1,5 +1,7 @@
 # Ci&T :: API :: Pizzaria
 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/renatomak/challenge-ciandt-pizzaria/blob/main/LICENSE)
+
 API para gerenciamento de sabores das pizzas.
 
 ## :dart: Swagger
@@ -60,6 +62,26 @@ mvn clean install -U
 - [x] GET: /flavors/{id} - Recupera um sabor, conforme id informado;
 - [x] PUT: /flavors/{id} - Atualiza um sabor, conforme id informado. É preciso informar os campos a serem alterados.
 - [x] DELETE: /flavors/{id} - Remove um sabor, conforme id informado.
+
+## Atributos
+- name: Obrigátorio. Deve ter no minimo 3 caracteres e no maximo 100.
+- description: Obrigatório. Deve ter no minimo 3 caracteres e no máximo 240.
+- price: Obrigatório. Não pode ser menor que 1.
+
+
+## Testes no Postman
+Faça o import do arquivo Ci&T-Pizzaria.postman_collection.json que está dentro da pasta resorces para executar os testes dos endpoints.
+
+
+# Tecnologias utilizadas
+
+<img src="https://cdn.icon-icons.com/icons2/3053/PNG/512/intellij_alt_macos_bigsur_icon_190060.png" alt="Intellij IDE" width="40" height="40" style="max-width:100%;" /> &nbsp; &nbsp; &nbsp; &nbsp;
+<img src="https://spring.io/images/logo-spring-tools-gear-3dbfa4e3714afa9d58885422ec7ac8e5.svg" alt="spring" width="40" height="40" style="max-width:100%;" /> &nbsp; &nbsp; &nbsp; &nbsp;
+<img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/java_original_wordmark_logo_icon_146459.png" alt="java" width="40" height="40" style="max-width:100%;" /> &nbsp; &nbsp; &nbsp; &nbsp;
+<img src="https://cdn.icon-icons.com/icons2/3053/PNG/512/postman_macos_bigsur_icon_189815.png" alt="postman" width="40" height="40" style="max-width:100%;" /> &nbsp; &nbsp; &nbsp; &nbsp;
+<img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mysql_original_wordmark_logo_icon_146417.png" alt="MySQL" width="40" height="40" style="max-width:100%;" /> &nbsp; &nbsp; &nbsp; &nbsp;
+<img src="https://cdn.icon-icons.com/icons2/1381/PNG/512/mysqlworkbench_93532.png" alt="Workbench" width="40" height="40" style="max-width:100%;" /> &nbsp; &nbsp; &nbsp; &nbsp;
+
 </br>
 </br>
 
