@@ -9,6 +9,7 @@ API para gerenciamento de sabores das pizzas.
 Link de acesso ao Swagger.
 
 - [Swagger Local](http://localhost:8080/swagger-ui/#/)
+  <img src="src/main/resources/asserts/swagger.png" alt="swagger" style="max-width:100%;" /> &nbsp; &nbsp; &nbsp; &nbsp;
 
 ## :dart: Requisitos para rodar a aplicação localmente
 
