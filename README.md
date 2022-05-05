@@ -1,6 +1,6 @@
 # Ci&T :: API :: Pizzaria
 
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/renatomak/projeto-sds3/blob/main/LICENSE)
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/renatomak/challenge-ciandt-pizzaria/blob/main/LICENSE)
 
 API para gerenciamento de sabores das pizzas.
 
