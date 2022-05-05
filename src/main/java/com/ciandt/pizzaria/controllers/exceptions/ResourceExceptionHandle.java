@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 @ControllerAdvice
 public class ResourceExceptionHandle {
@@ -18,7 +19,7 @@ public class ResourceExceptionHandle {
         StandardError err = new StandardError();
         HttpStatus status = HttpStatus.NOT_FOUND;
 
-        err.setTimestamp(Instant.now());
+        err.setTimestamp(LocalDateTime.now());
         err.setStatus(status.value());
         err.setError(Messages.EXCEPTION_RESOURCE_NOT_FOUND);
         err.setMessage(e.getMessage());
