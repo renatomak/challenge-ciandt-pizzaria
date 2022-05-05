@@ -64,8 +64,8 @@ mvn clean install -U
 - [x] DELETE: /flavors/{id} - Remove um sabor, conforme id informado.
 
 ## Atributos
-- name: Obrigátorio. Deve ter no minimo 3 caracteres e no maximo 100.
-- description: Obrigatório. Deve ter no minimo 3 caracteres e no máximo 240.
+- name: Obrigatório. Deve ter no mínimo 3 caracteres e no máximo 100.
+- description: Obrigatório. Deve ter no mínimo 3 caracteres e no máximo 240.
 - price: Obrigatório. Não pode ser menor que 1.
 
 
